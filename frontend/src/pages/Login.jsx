@@ -26,13 +26,20 @@ const handleSubmit = async (e) => {
       formData
     );
 
+    console.log("LOGIN RESPONSE:", response.data);
+
     localStorage.setItem("token", response.data.token);
+
+    console.log(
+      "TOKEN AFTER SAVE:",
+      localStorage.getItem("token")
+    );
 
     alert("Login Successful");
 
     navigate("/dashboard");
   } catch (error) {
-    console.log(error);
+    console.log("LOGIN ERROR:", error);
 
     alert("Login Failed");
   }

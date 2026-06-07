@@ -70,6 +70,7 @@ function Dashboard() {
       if (statusFilter !== "all") params.append("status", statusFilter);
       if (search.trim()) params.append("search", search.trim());
       const { data } = await API.get(`/jobs?${params}`);
+      console.log("Jobs: ",data);
       setJobs(data.jobs || []);
     } catch (err) {
       console.error("Failed to fetch jobs:", err);
