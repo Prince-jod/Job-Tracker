@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../api/axios";
+import JobCard from "../components/JobCard";
 
 const STATUS_CONFIG = {
   wishlist:  { label: "Wishlist",   bg: "bg-violet-100", text: "text-violet-700", dot: "bg-violet-400" },
@@ -90,6 +91,7 @@ const SkeletonCard = () => (
     <div className="h-5 bg-gray-100 rounded w-1/3" />
   </div>
 );
+
 
 function Dashboard() {
   const navigate = useNavigate();
